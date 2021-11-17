@@ -5,7 +5,6 @@ services:
   nodejs:
     container_name: discord-bot
     build:
-      context: globalConfig
       dockerfile: "./Docker/Dockerfile"
     restart: unless-stopped
     environment:

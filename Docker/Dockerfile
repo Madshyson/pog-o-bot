@@ -18,7 +18,6 @@ RUN npm install && npm cache clean --force --loglevel=error
 
 # Bundle app source
 COPY --chown=node:node ./botApp.js .
-COPY --chown=node:node ../globalConfig .
 
 # start bot
 CMD ["npm", "run", "start"]
