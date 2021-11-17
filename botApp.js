@@ -13,8 +13,6 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', message => {
-    console.log(message.createdTimestamp - lastMessage);
-
     if(message.author.bot) {
 
     } else if ((message.createdTimestamp - lastMessage > 1800000) && (Math.floor(Math.random() * 2) === 0)) {
