@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { clientId, channelId, roleId, guildId } = require('./config.json');
 let currentChannel;
 let lastMessage = 0;
