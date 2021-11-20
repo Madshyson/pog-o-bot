@@ -23,7 +23,7 @@ const league = function (message, lastMessage, client) {
 }
 
 const reactToGnocchi = function (message, lastMessage, client) {
-    if (message.author.id === 189322097191813126) {
+    if (message.author.id === 189322097191813126 && (message.createdTimestamp - lastMessage > 1800000) && (Math.floor(Math.random() * 2) === 0)) {
         message.react('<:mad2:496798566942113802>');
     }
 }
