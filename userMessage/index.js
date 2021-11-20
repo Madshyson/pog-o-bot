@@ -22,8 +22,15 @@ const league = function (message, lastMessage, client) {
     }
 }
 
+const reactToGnocchi = function (message, lastMessage, client) {
+    if (message.author.id === 189322097191813126) {
+        message.react('<:mad2:496798566942113802>');
+    }
+}
+
 module.exports = {
     whoAsked,
     dota,
-    league
+    league,
+    reactToGnocchi
 }

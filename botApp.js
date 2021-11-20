@@ -21,6 +21,7 @@ client.on('messageCreate', message => {
     userMessage.whoAsked(message, lastMessage, client);
     userMessage.dota(message, lastMessage, client);
     userMessage.league(message, lastMessage, client);
+    userMessage.reactToGnocchi(message, lastMessage, client);
     lastMessage = message.createdTimestamp;
 });
 
