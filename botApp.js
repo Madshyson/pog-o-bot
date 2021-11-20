@@ -13,8 +13,7 @@ const chooseResponse = function (message, author) {
 client.on('ready', () => {
     console.log('Coucou !');
     const channel = client.channels.cache.find(channel => channel.id === channelId);
-    channel.send('PogO it\'s me !');
-    client.user.setActivity('Who asked ?');
+    client.user.setActivity('PogO ?');
 });
 
 client.on('messageCreate', message => {
@@ -24,7 +23,7 @@ client.on('messageCreate', message => {
         const channel = client.channels.cache.find(channel => channel.id === channelId);
         channel.send('WH<:OMEGALUL:751459082665197600> ASKED!?');
         lastMessage = message.createdTimestamp;
-    } else if (essage.content.toLowerCase().includes("dota")) {
+    } else if (message.content.toLowerCase().includes("dota")) {
         const channel = client.channels.cache.find(channel => channel.id === channelId);
         channel.send('DOTA TIME BOYYYS <:PogO:911598941357879327> !');
         lastMessage = message.createdTimestamp;
