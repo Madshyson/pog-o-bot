@@ -18,12 +18,21 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', message => {
-    if(message.author.bot) {
+    if (message.author.bot) {
+        // OMEGALUL
     } else if ((message.createdTimestamp - lastMessage > 1800000) && (Math.floor(Math.random() * 2) === 0)) {
         const channel = client.channels.cache.find(channel => channel.id === channelId);
         channel.send('WH<:OMEGALUL:751459082665197600> ASKED!?');
         lastMessage = message.createdTimestamp;
     } else {
+        lastMessage = message.createdTimestamp;
+    }
+
+    // check if the word dota is sent to the channel and make a proper response
+    let msg = message.content.toLowerCase();
+    if (msg.includes("dota")) {
+        const channel = client.channels.cache.find(channel => channel.id === channelId);
+        channel.send('DOTA TIME BOYYYS <:PogO:911598941357879327> !');
         lastMessage = message.createdTimestamp;
     }
 });
