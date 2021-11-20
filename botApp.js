@@ -18,8 +18,10 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', message => {
-    lastMessage = userMessage.whoAsked(message, lastMessage, client);
-    lastMessage = userMessage.dota(message, lastMessage, client);
+    userMessage.whoAsked(message, lastMessage, client);
+    userMessage.dota(message, lastMessage, client);
+    userMessage.league(message, lastMessage, client);
+    lastMessage = message.createdTimestamp;
 });
 
 client.login(process.env.BOTTOKEN);
