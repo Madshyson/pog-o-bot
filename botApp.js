@@ -24,15 +24,11 @@ client.on('messageCreate', message => {
         const channel = client.channels.cache.find(channel => channel.id === channelId);
         channel.send('WH<:OMEGALUL:751459082665197600> ASKED!?');
         lastMessage = message.createdTimestamp;
-    } else {
-        lastMessage = message.createdTimestamp;
-    }
-
-    // check if the word dota is sent to the channel and make a proper response
-    let msg = message.content.toLowerCase();
-    if (msg.includes("dota")) {
+    } else if (essage.content.toLowerCase().includes("dota")) {
         const channel = client.channels.cache.find(channel => channel.id === channelId);
         channel.send('DOTA TIME BOYYYS <:PogO:911598941357879327> !');
+        lastMessage = message.createdTimestamp;
+    } else {
         lastMessage = message.createdTimestamp;
     }
 });
