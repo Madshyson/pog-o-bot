@@ -25,7 +25,7 @@ client.on('messageCreate', message => {
         lastMessage = message.createdTimestamp;
     } else if (message.content.toLowerCase().includes("dota")) {
         const channel = client.channels.cache.find(channel => channel.id === channelId);
-        channel.send('DOTA TIME BOYYYS <:PogO:911598941357879327> !');
+        channel.send('DOTA TIME BOYYYS <:PogO:709181281849573418> !');
         lastMessage = message.createdTimestamp;
     } else {
         lastMessage = message.createdTimestamp;
