@@ -28,7 +28,7 @@ const reactToGnocchi = function (message, lastMessage, client) {
 
 const reactToLUMIA = function (message, lastMessage, client) {
     if (!message.author.bot && message.author.id === '221996422877151232') {
-        message.react('<:WhatChamp:821399722224779286>');
+        message.react('<:AYAYA:751459128370659479>');
     }
 }
 
