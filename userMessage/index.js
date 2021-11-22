@@ -33,12 +33,12 @@ const reactToLUMIA = function (message, lastMessage, client) {
 }
 
 const dis = function (message, lastMessage, client) {
-    if (message.content.toLowerCase.length <= 150) {
+    const channel = client.channels.cache.find(channel => channel.id === channelId);
+    if (message.content.length <= 150) {
         const wordlist = message.content.toLowerCase().split(" ");
         wordlist.map((word) => {
             if (word.substr(0, 2) === 'di') {
-                const channel = client.channels.cache.find(channel => channel.id === channelId);
-                channel.send(word.substr(2, word.length - 2) + ' <:LULW:751461218991996980>');
+                channel.send(word.substr(2, word.length - 2).toString() + ' <:LULW:751461218991996980>');
             }
         })
     }
