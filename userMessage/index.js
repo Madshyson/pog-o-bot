@@ -26,6 +26,24 @@ const reactToGnocchi = function (message, lastMessage, client) {
     }
 }
 
+const reactToLUMIA = function (message, lastMessage, client) {
+    if (!message.author.bot && message.author.id === '221996422877151232') {
+        message.react('<:WhatChamp:821399722224779286>');
+    }
+}
+
+const dis = function (message, lastMessage, client) {
+    if (message.content.toLowerCase.length <= 150) {
+        const wordlist = message.content.toLowerCase().split(" ");
+        wordlist.map((word) => {
+            if (word.substr(0, 2) === 'di') {
+                const channel = client.channels.cache.find(channel => channel.id === channelId);
+                channel.send(word.substr(2, word.length - 2) + ' <:LULW:751461218991996980>');
+            }
+        })
+    }
+}
+
 const reactGoodOrBad = function (message, lastMessage, client) {
     if (!message.author.bot && message.content.toLowerCase().includes("good bot")) {
         message.react('<:PogO:709181281849573418>');
@@ -33,7 +51,6 @@ const reactGoodOrBad = function (message, lastMessage, client) {
     if (!message.author.bot && message.content.toLowerCase().includes("bad bot")) {
         message.react('<:SillyChamp:774750190413414400>');
     }
-
 }
 
 module.exports = {
@@ -41,5 +58,7 @@ module.exports = {
     dota,
     league,
     reactToGnocchi,
-    reactGoodOrBad
+    reactToLUMIA,
+    reactGoodOrBad,
+    dis,
 }

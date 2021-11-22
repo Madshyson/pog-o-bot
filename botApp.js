@@ -23,7 +23,9 @@ client.on('messageCreate', message => {
         userMessage.dota(message);
         userMessage.league(message);
         userMessage.reactToGnocchi(message);
+        userMessage.reactToLUMIA(message);
         userMessage.reactGoodOrBad(message);
+        userMessage.dis(message);
         lastMessage = message.createdTimestamp;
     }
 });
