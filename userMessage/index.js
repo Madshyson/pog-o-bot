@@ -27,14 +27,14 @@ const reactToGnocchi = function (message, lastMessage, client) {
 }
 
 const reactToLUMIA = function (message, lastMessage, client) {
-    if (!message.author.bot && message.author.id === '221996422877151232') {
+    if (!message.author.bot && message.author.id === '221996422877151232' && (Math.floor(Math.random() * 2) === 0)) {
         message.react('<:AYAYA:751459128370659479>');
     }
 }
 
 const dis = function (message, client) {
     const channel = client.channels.cache.find(channel => channel.id === channelId);
-    if (message.content.length <= 150) {
+    if (message.content.length <= 150 && (Math.floor(Math.random() * 4) === 0)) {
         const wordlist = message.content.toLowerCase().split(" ");
         wordlist.map((word) => {
             if (word.substr(0, 2) === 'di' && word.length >= 5) {
