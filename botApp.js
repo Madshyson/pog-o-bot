@@ -20,10 +20,10 @@ client.on('ready', () => {
 client.on('messageCreate', message => {
     if (message.channelId === channelId) {
         userMessage.whoAsked(message, lastMessage, client);
-        userMessage.dota(message, lastMessage, client);
-        userMessage.league(message, lastMessage, client);
-        userMessage.reactToGnocchi(message, lastMessage, client);
-        userMessage.reactGoodOrBad(message, lastMessage, client);
+        userMessage.dota(message);
+        userMessage.league(message);
+        userMessage.reactToGnocchi(message);
+        userMessage.reactGoodOrBad(message);
         lastMessage = message.createdTimestamp;
     }
 });
