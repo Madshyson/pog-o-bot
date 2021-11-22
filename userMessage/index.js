@@ -37,7 +37,7 @@ const dis = function (message, client) {
     if (message.content.length <= 150) {
         const wordlist = message.content.toLowerCase().split(" ");
         wordlist.map((word) => {
-            if (word.substr(0, 2) === 'di') {
+            if (word.substr(0, 2) === 'di' && word.length >= 5) {
                 channel.send(word.substr(2, word.length - 2).toString() + ' <:LULW:751461218991996980>');
             }
         })
