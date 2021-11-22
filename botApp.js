@@ -18,11 +18,13 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', message => {
-    userMessage.whoAsked(message, lastMessage, client);
-    userMessage.dota(message, lastMessage, client);
-    userMessage.league(message, lastMessage, client);
-    userMessage.reactToGnocchi(message, lastMessage, client);
-    lastMessage = message.createdTimestamp;
+    if (message.channelId === channelId) {
+        userMessage.whoAsked(message, lastMessage, client);
+        userMessage.dota(message, lastMessage, client);
+        userMessage.league(message, lastMessage, client);
+        userMessage.reactToGnocchi(message, lastMessage, client);
+        lastMessage = message.createdTimestamp;
+    }
 });
 
 client.login(process.env.BOTTOKEN);
