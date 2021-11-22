@@ -29,7 +29,8 @@ const reactToGnocchi = function (message, lastMessage, client) {
 const reactGoodOrBad = function (message, lastMessage, client) {
     if (!message.author.bot && message.content.toLowerCase().includes("good bot")) {
         message.react('<:PogO:709181281849573418>');
-    } else if (!message.author.bot && message.content.toLowerCase().includes("bad bot")) {
+    }
+    if (!message.author.bot && message.content.toLowerCase().includes("bad bot")) {
         message.react('<:SillyChamp:774750190413414400>');
     }
 
