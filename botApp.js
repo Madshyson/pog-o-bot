@@ -23,6 +23,7 @@ client.on('messageCreate', message => {
         userMessage.dota(message, lastMessage, client);
         userMessage.league(message, lastMessage, client);
         userMessage.reactToGnocchi(message, lastMessage, client);
+        userMessage.reactGoodOrBad(message, lastMessage, client);
         lastMessage = message.createdTimestamp;
     }
 });
