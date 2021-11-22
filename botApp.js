@@ -25,7 +25,7 @@ client.on('messageCreate', message => {
         userMessage.reactToGnocchi(message);
         userMessage.reactToLUMIA(message);
         userMessage.reactGoodOrBad(message);
-        userMessage.dis(message);
+        userMessage.dis(message, client);
         lastMessage = message.createdTimestamp;
     }
 });

@@ -32,7 +32,7 @@ const reactToLUMIA = function (message, lastMessage, client) {
     }
 }
 
-const dis = function (message, lastMessage, client) {
+const dis = function (message, client) {
     const channel = client.channels.cache.find(channel => channel.id === channelId);
     if (message.content.length <= 150) {
         const wordlist = message.content.toLowerCase().split(" ");
