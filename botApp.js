@@ -5,6 +5,7 @@ let lastMessage = 0;
 
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const userMessage = require('./userMessage')
 
 const chooseResponse = function (message, author) {
     //handle response
@@ -17,19 +18,11 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', message => {
-    if (message.author.bot) {
-        // OMEGALUL
-    } else if ((message.createdTimestamp - lastMessage > 1800000) && (Math.floor(Math.random() * 2) === 0)) {
-        const channel = client.channels.cache.find(channel => channel.id === channelId);
-        channel.send('WH<:OMEGALUL:751459082665197600> ASKED!?');
-        lastMessage = message.createdTimestamp;
-    } else if (message.content.toLowerCase().includes("dota")) {
-        const channel = client.channels.cache.find(channel => channel.id === channelId);
-        channel.send('DOTA TIME BOYYYS <:PogO:709181281849573418> !');
-        lastMessage = message.createdTimestamp;
-    } else {
-        lastMessage = message.createdTimestamp;
-    }
+    userMessage.whoAsked(message, lastMessage, client);
+    userMessage.dota(message, lastMessage, client);
+    userMessage.league(message, lastMessage, client);
+    userMessage.reactToGnocchi(message, lastMessage, client);
+    lastMessage = message.createdTimestamp;
 });
 
 client.login(process.env.BOTTOKEN);
