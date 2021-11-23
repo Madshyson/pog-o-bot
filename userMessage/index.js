@@ -51,7 +51,7 @@ const reactGoodOrBad = function (message, lastMessage, client) {
 const cat =  async function(message) {
     if (!message.author.bot && message.content.toLowerCase().includes("!cat")) {
         let res = await axios.get("https://aws.random.cat/meow");
-        message.react('<:pngclipartemojidiscordsmileyshru:911673348516347914>');
+        message.react('<:AYAYA:751459128370659479>');
 	    message.reply(res.data.file);
     }
 }
