@@ -1,4 +1,5 @@
 require('dotenv').config()
+const axios = require("axios");
 const { channelId } = require('../config.json');
 
 const whoAsked = function (message, lastMessage, client) {
@@ -17,12 +18,6 @@ const dota = function (message, lastMessage, client) {
 const league = function (message, lastMessage, client) {
     if (!message.author.bot && message.content.toLowerCase().includes("league") && message.content.toLowerCase().includes("legends")) {
         message.react('<:OMEGALUL:751459082665197600>');
-    }
-}
-
-const reactToGnocchi = function (message, lastMessage, client) {
-    if (!message.author.bot && message.author.id === '189322097191813126' && (Math.floor(Math.random() * 5) === 0)) {
-        message.react('<:WhatChamp:821399722224779286>');
     }
 }
 
@@ -46,10 +41,18 @@ const dis = function (message, client) {
 
 const reactGoodOrBad = function (message, lastMessage, client) {
     if (!message.author.bot && message.content.toLowerCase().includes("good bot")) {
-        message.react('<:PogO:709181281849573418>');
+        message.react('<:KKomrade:751464244561838100>');
     }
     if (!message.author.bot && message.content.toLowerCase().includes("bad bot")) {
-        message.react('<:SillyChamp:774750190413414400>');
+        message.react('<:pepeLaugh:751459148981338163>');
+    }
+}
+
+const cat =  async function(message) {
+    if (!message.author.bot && message.content.toLowerCase().includes("!cat")) {
+        let res = await axios.get("https://aws.random.cat/meow");
+        message.react('<:AYAYA:751459128370659479>');
+	    message.reply(res.data.file);
     }
 }
 
@@ -57,8 +60,8 @@ module.exports = {
     whoAsked,
     dota,
     league,
-    reactToGnocchi,
     reactToLUMIA,
     reactGoodOrBad,
     dis,
+    cat
 }

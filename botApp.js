@@ -22,10 +22,10 @@ client.on('messageCreate', message => {
         userMessage.whoAsked(message, lastMessage, client);
         userMessage.dota(message);
         userMessage.league(message);
-        userMessage.reactToGnocchi(message);
         userMessage.reactToLUMIA(message);
         userMessage.reactGoodOrBad(message);
         userMessage.dis(message, client);
+        userMessage.cat(message);
         lastMessage = message.createdTimestamp;
     }
 });
